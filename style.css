@@ -22,3 +22,115 @@ canvas {
     pointer-events: none;
     z-index: 1000;
 }
+
+#debugPanel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    background: rgba(10, 10, 20, 0.95);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2000;
+    font-family: 'DM Sans', sans-serif;
+    color: #fff;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+}
+
+#debugPanel.hidden {
+    transform: translateX(100%);
+}
+
+.debug-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+}
+
+.debug-close {
+    font-size: 11px;
+    opacity: 0.5;
+}
+
+#debugContent {
+    padding: 15px;
+}
+
+.debug-section {
+    margin-bottom: 20px;
+}
+
+.debug-section-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.debug-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    gap: 10px;
+}
+
+.debug-label {
+    font-size: 12px;
+    flex: 1;
+    min-width: 100px;
+}
+
+.debug-slider {
+    flex: 2;
+    -webkit-appearance: none;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    outline: none;
+}
+
+.debug-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.debug-value {
+    font-size: 11px;
+    width: 50px;
+    text-align: right;
+    font-family: monospace;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.debug-btn {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    transition: background 0.2s;
+}
+
+.debug-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
